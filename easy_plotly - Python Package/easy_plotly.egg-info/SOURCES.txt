@@ -1,0 +1,12 @@
+setup.py
+easy_plotly/__init__.py
+easy_plotly/bargraph.py
+easy_plotly/bubblegraph.py
+easy_plotly/graph.py
+easy_plotly/linegraph.py
+easy_plotly/test.py
+easy_plotly.egg-info/PKG-INFO
+easy_plotly.egg-info/SOURCES.txt
+easy_plotly.egg-info/dependency_links.txt
+easy_plotly.egg-info/not-zip-safe
+easy_plotly.egg-info/top_level.txt

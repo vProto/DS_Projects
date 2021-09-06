@@ -13,7 +13,7 @@ Let’s take a look at the following questions:
 
 # Files in the Repository:
 - data/listing.csv: detailed listings data
-- data/neighbourhoods.csv: Includes the neighbourhood_group in Crete in both English and Greek
+- data/neighbourhoods.csv: Includes neighbourhoods in Crete in both English and Greek
 - data/reviews.csv: Detailed reviews given by the guests
 - Chania_Data_Analysis.ipynb Jupyter notebook where text, code, and a visualization were made.
 - readme.md  README file
