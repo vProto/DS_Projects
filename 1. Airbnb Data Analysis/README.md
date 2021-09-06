@@ -1,12 +1,14 @@
 # Project: Exploratory Data Analysis of the Airbnb market in Chania
 
-Welcome to the Exploratory Data Analysis of the Airbnb market in Chania. The goal of the project is to help hosts better understand the local market by answering the questions below:
-- 	What are the different types of properties in Chania? Do they vary by neighborhood?
--	Which cities are rated highly by guests?
-- 	What is the distribution of prices by neighbourhood?
-- 	What are the characteristics of the listing which sell at the highest price?
-- 	Factors that are correlated the most with Airbnb superhosts
+Welcome to the Exploratory Data Analysis of the Airbnb market in Chania. This project is aimed at Airbnb hosts to help them understand the local market in Chania. 
+As an Airbnb host in Chania, Crete, I was always astonished by the increase in Airbnb rentals on my island. Below is my data analysis explanation to help understand how that market has evolved and what matters the most now.
 
+Let’s take a look at the following questions:
+- What are the different types of properties in Chania? Do they vary by neighbourhood?
+- Which cities are rated highly by guests?
+- What is the distribution of prices by neighbourhood?
+- What are the characteristics of the listing which sell at the highest price?
+- Factors that are correlated the most with Airbnb superhosts
 
 
 # Files in the Repository:
@@ -27,15 +29,16 @@ Welcome to the Exploratory Data Analysis of the Airbnb market in Chania. The goa
 # Summary
 
 Summary:
-- Increase in Airbnb demand has increased drastically since 2012, with 2019 been the best year so far
-- Most of the properties in Chania region are apartments and villas located in Chania city
-- Average price per person ranges from ~25-35 euros across cities, with Chania and Platanias having the higher dispersion
-- Superhosts that rent Villas or Rooms in Boutique hotels in Chania, Platanias or Kandanos cities tend to charge the most
-- Superhosts usually have large number of reviews, high response and acceptance rates, and good reviews
+- Demand for Airbnb has increased dramatically since 2012. 2019 has been the best year so far.
+- Most of the properties in the Chania region are apartments and villas located in Chania city.
+- The average price per person ranges from 25-35 euros per night across all cities. Chania and Platanias have the highest range of prices above this.
+- Superhosts that rent Villas or Rooms in Boutique hotels in Chania, Platanias or Kandanos cities tend to charge the most.
+- To become a “Superhost'' it helps to have lots of top reviews, a fast response rating, and a high acceptance level. 
+
 
 
 # Visit my blog post
-
+- https://medium.com/@vangelisprotopapadakis/exploratory-data-analysis-of-the-airbnb-market-in-chania-f495f79b693
 
 # Ressources:
 - http://insideairbnb.com/get-the-data.html
