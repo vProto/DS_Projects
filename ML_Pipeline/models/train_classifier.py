@@ -5,6 +5,7 @@ import numpy as np
 from sqlalchemy import create_engine
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 import string
 import nltk
 from nltk.stem import WordNetLemmatizer
@@ -18,7 +19,8 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from sklearn.model_selection import GridSearchCV
 from sklearn.utils.multiclass import type_of_target
-nltk.download(['punkt', 'wordnet'])
+nltk.download(['punkt', 'wordnet','stopwords'])
+
 import os.path
 import time
 
@@ -51,8 +53,13 @@ def tokenize(text):
     # remove punctuation
     # Remove punctuation characters
     text = text.translate(str.maketrans('', '', string.punctuation))
+
     # tokenize
     tokens = word_tokenize(text)
+    stop_words = set(stopwords.words('english'))
+    tokens = [w for w in tokens if not w.lower() in stop_words]
+
+
     lemmatizer = WordNetLemmatizer()
 
     clean_tokens = []
@@ -80,8 +87,7 @@ def build_model():
         'clf__estimator__n_estimators': [50, 70]
     }
 
-    cv = GridSearchCV(pipeline, param_grid=parameters,n_jobs=4)
-
+    cv = GridSearchCV(pipeline, param_grid=parameters)
 
     return cv
 
@@ -105,27 +111,8 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
     for i in range(len(category_names)):
         print(category_names[i])
-        print(classification_report(Y_test[category_names[i]], y_pred[:, i]),zero_division=0)
+        print(classification_report(Y_test[category_names[i]], y_pred[:, i]))
 
-    # npTrue = np.array(Y_test)
-    # npPred = np.array(y_pred)
-    # metrics = []
-    #
-    # # Evaluate metrics for each set of labels
-    # for i in range(len(category_names)):
-    #     accuracy = accuracy_score(npTrue[:, i], npPred[:, i])
-    #     precision = precision_score(npTrue[:, i], npPred[:, i], average="weighted",zero_division=0)
-    #     recall = recall_score(npTrue[:, i], npPred[:, i], average="weighted")
-    #     f1 = f1_score(npTrue[:, i], npPred[:, i], average="weighted")
-    #
-    #     metrics.append([accuracy, precision, recall, f1])
-    #
-    # # store metrics
-    # metrics = np.array(metrics)
-    # data_metrics = pd.DataFrame(data=metrics, index=category_names, columns=['Accuracy', 'Precision', 'Recall', 'F1'])
-    #
-    # print(data_metrics.describe())
-    # return data_metrics
 
 def save_model(model, model_filepath):
     '''
