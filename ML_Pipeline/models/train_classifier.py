@@ -103,25 +103,29 @@ def evaluate_model(model, X_test, Y_test, category_names):
     # predict
     y_pred = model.predict(X_test)
 
-    npTrue = np.array(Y_test)
-    npPred = np.array(y_pred)
-    metrics = []
-
-    # Evaluate metrics for each set of labels
     for i in range(len(category_names)):
-        accuracy = accuracy_score(npTrue[:, i], npPred[:, i])
-        precision = precision_score(npTrue[:, i], npPred[:, i], average="weighted",zero_division=0)
-        recall = recall_score(npTrue[:, i], npPred[:, i], average="weighted")
-        f1 = f1_score(npTrue[:, i], npPred[:, i], average="weighted")
+        print(category_names[i])
+        print(classification_report(Y_test[category_names[i]], y_pred[:, i]),zero_division=0)
 
-        metrics.append([accuracy, precision, recall, f1])
-
-    # store metrics
-    metrics = np.array(metrics)
-    data_metrics = pd.DataFrame(data=metrics, index=category_names, columns=['Accuracy', 'Precision', 'Recall', 'F1'])
-
-    print(data_metrics.describe())
-    return data_metrics
+    # npTrue = np.array(Y_test)
+    # npPred = np.array(y_pred)
+    # metrics = []
+    #
+    # # Evaluate metrics for each set of labels
+    # for i in range(len(category_names)):
+    #     accuracy = accuracy_score(npTrue[:, i], npPred[:, i])
+    #     precision = precision_score(npTrue[:, i], npPred[:, i], average="weighted",zero_division=0)
+    #     recall = recall_score(npTrue[:, i], npPred[:, i], average="weighted")
+    #     f1 = f1_score(npTrue[:, i], npPred[:, i], average="weighted")
+    #
+    #     metrics.append([accuracy, precision, recall, f1])
+    #
+    # # store metrics
+    # metrics = np.array(metrics)
+    # data_metrics = pd.DataFrame(data=metrics, index=category_names, columns=['Accuracy', 'Precision', 'Recall', 'F1'])
+    #
+    # print(data_metrics.describe())
+    # return data_metrics
 
 def save_model(model, model_filepath):
     '''
