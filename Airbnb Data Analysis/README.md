@@ -18,7 +18,7 @@ Let’s take a look at the following questions:
 - Chania_Data_Analysis.ipynb Jupyter notebook where text, code, and a visualization were made.
 - readme.md  README file
 
-# Used Machine Learning Libraries 
+# Used Python Libraries 
 - numpy
 - pandas
 - plotly
